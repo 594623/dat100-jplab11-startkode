@@ -20,6 +20,7 @@ public abstract class Innlegg {
 		this.id = id;
 		this.bruker = bruker;
 		this.dato = dato;
+		this.likes = 0;
 		
 		//throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
 	}
