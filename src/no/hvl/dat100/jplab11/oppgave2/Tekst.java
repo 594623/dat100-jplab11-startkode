@@ -7,10 +7,6 @@ public class Tekst extends Innlegg {
 
 	// TODO: objektvariable 
 	
-	int id;
-	String bruker;
-	String dato;
-	int likes;
 	String tekst;
 	
 	public Tekst () {
@@ -18,18 +14,11 @@ public class Tekst extends Innlegg {
 	}
 	
 	public Tekst(int id, String bruker, String dato, String tekst) {
-		this.id = id;
-		this.bruker = bruker;
-		this.dato = dato;
-		likes = 0;
-		this.tekst = tekst;
+		this(id, bruker, dato, 0, tekst);
 	}
 	
 	public Tekst(int id, String bruker, String dato, int likes, String tekst) {
-		this.id = id;
-		this.bruker = bruker;
-		this.dato = dato;
-		this.likes = likes;
+		super(id, bruker, dato, likes);
 		this.tekst = tekst;
 	}
 	
@@ -44,10 +33,7 @@ public class Tekst extends Innlegg {
 	@Override
 	public String toString() {
 		return "TEKST\n" +
-				id + "\n" +
-				bruker + "\n" +
-				dato + "\n" +
-				likes + "\n" +
+				super.toString() +
 				tekst + "\n";
 	}
 	
