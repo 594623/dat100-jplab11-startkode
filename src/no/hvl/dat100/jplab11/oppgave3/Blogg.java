@@ -38,10 +38,8 @@ public class Blogg {
 
 	public boolean finnes(Innlegg innlegg) {
 		for (Innlegg i : innleggtabell) {
-			if (i != null) {
-				if (i.erLik(innlegg)) {		
-					return true;
-				}
+			if (i != null && i.erLik(innlegg)) {
+				return true;
 			}
 		}
 		return false;
