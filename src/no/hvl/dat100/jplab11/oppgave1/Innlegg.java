@@ -39,21 +39,15 @@ public abstract class Innlegg {
 	}
 
 	public String getDato() {
-		
 		return dato;
-		
 	}
 
 	public void setDato(String dato) {
-		
 		this.dato = dato;
-		
 	}
 
 	public int getId() {
-		
 		return id;
-		
 	}
 	
 	public void setId(int id) {
@@ -61,30 +55,20 @@ public abstract class Innlegg {
 	}
 
 	public int getLikes() {
-		
 		return likes;
-		
 	}
 	
 	public void doLike () {
-		
 		likes++;
-		
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		
-		if (innlegg.getId() == id) {
-			return true;
-		} else return false;
-		
+		return innlegg.getId() == id;
 	}
 	
 	@Override
 	public String toString() {
-		
 		return id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n";
-			
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6

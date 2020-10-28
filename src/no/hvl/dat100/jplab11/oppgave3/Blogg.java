@@ -11,8 +11,7 @@ public class Blogg {
 	private int nesteledig;
 
 	public Blogg() {
-		innleggtabell = new Innlegg[20];
-		nesteledig = 0;
+		this(20);
 	}
 
 	public Blogg(int lengde) {
@@ -49,24 +48,12 @@ public class Blogg {
 	}
 
 	public boolean ledigPlass() {
-		if (innleggtabell.length > nesteledig) {
-			return true;
-		} else return false;
+		return nesteledig < innleggtabell.length;
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
 		
-		boolean idFinnes = false;
-		int innleggId = innlegg.getId();
-		for (Innlegg i : innleggtabell) {
-			if (i != null) {
-				if (i.getId() == innleggId) {
-					idFinnes = true;
-				}
-			}
-		}
-		
-		if (!idFinnes) {
+		if (!finnes(innlegg) && ledigPlass()) {
 			innleggtabell[nesteledig] = innlegg;
 			nesteledig++;
 			return true;
