@@ -38,9 +38,8 @@ public class Blogg {
 
 	public boolean finnes(Innlegg innlegg) {
 		for (Innlegg i : innleggtabell) {
-			if (i != null && i.erLik(innlegg)) {
-				return true;
-			}
+			if (i == null) return false;
+			if (i.erLik(innlegg)) return true;
 		}
 		return false;
 	}
@@ -53,7 +52,7 @@ public class Blogg {
 		
 		if (!finnes(innlegg) && ledigPlass()) {
 			innleggtabell[nesteledig] = innlegg;
-			nesteledig++;
+			nesteledig ++;
 			return true;
 		} else return false;
 	}
