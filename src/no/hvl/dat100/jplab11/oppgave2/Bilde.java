@@ -34,8 +34,9 @@ public class Bilde extends Tekst {
 
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
-		
-		throw new UnsupportedOperationException(TODO.method());
+		String superhtml = super.toHTML();
+		superhtml = superhtml.substring(0, superhtml.length() - 5);
+		return superhtml + "\t\t<iframe src=\"" + url + "\" height=600 width=800></iframe><hr>\n";
 				
 	}
 }
